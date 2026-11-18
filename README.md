@@ -1,307 +1,209 @@
 <div align="center">
 
-<a href="https://github.com/herdodp/snapgent-connector">
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=800&size=52&duration=3000&pause=1000&color=FACC15&center=true&vCenter=true&width=700&height=90&lines=ArteX-TNT;+Connector+agent+MCP" alt="ArteX-TNT: Connector agent for VS Code" />
-</a>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=800&size=52&duration=3000&pause=1000&color=FACC15&center=true&vCenter=true&width=700&height=90&lines=ArteX-Hub;+AI+Chat+to+IDE+Bridge" alt="ArteX-Hub: AI chat to IDE bridge" />
 
-<p><b>Turn any AI chatbot browser to many app via MCP</b></p>
-
-<p><a href="https://discord.gg/rvaZ8KkvAX"><b>💬 Join Discord</b></a> to report problem</p>
+<p><b>Mengubah chat AI di browser menjadi agen kerja untuk VS Code, Cursor, dan Zed — lewat bridge MCP lokal.</b></p>
 
 [![License](https://img.shields.io/badge/LICENSE-GPL--3.0-FACC15?style=flat-square&labelColor=111111&logo=opensourceinitiative&logoColor=FACC15)](LICENSE)
 [![Manifest](https://img.shields.io/badge/MANIFEST-V3-FACC15?style=flat-square&labelColor=111111&logo=googlechrome&logoColor=FACC15)](https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3/)
-[![Release](https://img.shields.io/badge/RELEASE-V3.9.5-FACC15?style=flat-square&labelColor=111111&logo=semanticrelease&logoColor=FACC15)](https://github.com/herdodp/snapgent-connector/releases/tag/V3.9.5)
+[![Bridge](https://img.shields.io/badge/BRIDGE-V3.11.0-FACC15?style=flat-square&labelColor=111111&logo=socket&logoColor=FACC15)](CHANGELOG.md)
 [![MCP](https://img.shields.io/badge/PROTOCOL-MCP-FACC15?style=flat-square&labelColor=111111&logo=modelcontextprotocol&logoColor=FACC15)](https://modelcontextprotocol.io/)
 
 </div>
 
 ```console
+  ██████╗██████╗ ███████╗███████╗██╗  ██╗██╗   ██╗██╗  ██████╗██╗   ██╗
+ ██╔════╝██╔══██╗██╔════╝██╔════╝╚██╗██╔╝██║   ██║██║ ██╔═══██╗╚██╗ ██╔╝
+ ██║     ██████╔╝█████╗  ███████╗ ╚███╔╝ ██║   ██║██║ ██║   ██║ ╚████╔╝
+ ██║     ██╔══██╗██╔══╝  ╚════██║ ██╔██╗ ██║   ██║██║ ██║   ██║  ╚██╔╝
+ ╚██████╗██║  ██║███████╗███████║██╔╝ ██╗╚██████╔╝██║ ╚██████╔╝   ██║
+  ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═════╝    ╚═╝
 
-  ███████╗███╗   ██╗ █████╗ ██████╗  ██████╗ ███████╗███╗   ██╗████████╗
-  ██╔════╝████╗  ██║██╔══██╗██╔══██╗██╔════╝ ██╔════╝████╗  ██║╚══██╔══╝
-  ███████╗██╔██╗ ██║███████║██████╔╝██║  ███╗█████╗  ██╔██╗ ██║   ██║
-  ╚════██║██║╚██╗██║██╔══██║██╔═══╝ ██║   ██║██╔══╝  ██║╚██╗██║   ██║
-  ███████║██║ ╚████║██║  ██║██║     ╚██████╔╝███████╗██║ ╚████║   ██║
-  ╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝      ╚═════╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝
-
-  > browser extension + local bridge for VS Code and MCP
-  > no API key · no terminal · no copy-paste
+  > browser extension + local bridge + A2A coordination hub
+  > no API key · no subscription · loopback only
 ```
 
-ArteX-TNT is a browser extension plus a local bridge that connects a normal AI chat to **VS Code**. It automatically uses the currently open workspace. Describe what you want in plain language — the extension forwards commands to the selected server through the local bridge, and returns the results to chat.
+**ArteX-Hub** adalah kelanjutan dan pengembangan lanjutan dari **Snapgent Connector**. Ekstensi di browser membaca perintah berbentuk JSON dari balasan AI, lalu bridge lokal meneruskannya ke server MCP yang terhubung. Hasilnya dikirim kembali ke chat, sehingga sesi kerja berlanjut tanpa copy-paste.
 
-**Free and open source — no API key, subscription, or sign-in required.** ArteX-TNT automatically uses the currently open VS Code workspace.
+Gratis dan open source — tidak memerlukan API key, langganan, atau login tambahan.
 
 ---
 
-- **Installation:** [Watch Installation Video](https://youtu.be/eo3sdtPSBso)
-- **Demo:** [Watch Demo Video](https://youtu.be/HY0YWsHLp34)
+## `01` &nbsp; Atribusi dan lisensi
 
-- **MCP support**
-<img src="assets/mcpsupport.jpeg" width="300" alt="Logo Project">
+Proyek ini berdiri di atas karya pembuat awal. Atribusi ini **tidak dihapus dan tidak diubah**:
 
-- **Test snapgent connector + effect craft motion from artcraft** [Watch Video](https://youtu.be/wH_gpAWpA8E)
-<table>
-<tr>
-<td width="100%" valign="top">
-
-### 💻 VS Code
-The default target. Automatically connects to the workspace currently open in VS Code.
-
-</td>
-</tr>
-</table>
-
----
-
-## `01` &nbsp; How it works
-
-```
-┌─────────────┐     plain-text      ┌──────────────────┐    WebSocket    ┌────────────┐    MCP    ┌────────────────┐
-│  AI chat    │ ───  commands  ───▶ │ ArteX-TNT       │ ──────────────▶ │  Bridge    │ ────────▶ │ Selected MCP   │
-│  (browser)  │ ◀──  results   ───  │ browser extension│ ◀────────────── │ (local)    │ ◀──────── │ target         │
-└─────────────┘                     └──────────────────┘                 └────────────┘           └────────────────┘
-```
-
-1. **You** describe a task in a supported AI chat.
-2. The **AI** replies with a ArteX-TNT command.
-3. The **extension** detects the command and forwards it to the local bridge.
-4. The **bridge** routes it to the VS Code MCP server.
-5. The **result** is sent back into chat, and the AI continues working.
-
-VS Code's MCP server is configured locally by `start.bat`; it detects the open VS Code workspace automatically.
-
----
-
-## Snapgent App (standalone, Windows)
-
-Prefer not to load an extension or run the bridge yourself? **Snapgent App** is a standalone desktop app (Electron) with a built-in AI browser, a toolbar, and the bridge built in. It needs no Chrome/Edge, no `start.bat`, no Python and no Node.js.
-
-**Download** (pre-release `app-v0.1.0`): [Releases > app-v0.1.0](https://github.com/herdodp/snapgent-connector/releases/tag/app-v0.1.0)
-
-| File | Use |
+| Peran | Pihak |
 |---|---|
-| `Snapgent.Setup.0.1.0.exe` | Installer (recommended) |
-| `Snapgent-0.1.0-win-x64.zip` | Portable: extract the whole folder, then run `Snapgent.exe` |
+| **Pembuat awal / proyek induk** | **herdo dimas pratirto** ([@herdodp](https://github.com/herdodp)) — [Snapgent Connector](https://github.com/herdodp/snapgent-connector) |
+| **Lisensi** | **GNU GPL v3.0** — melihat berkas [LICENSE](LICENSE) |
+| **Pengembangan lanjutan** | ArteX-Hub — penamaan ulang, integrasi multi-IDE, privasi, dan koordinasi A2A |
 
-**How to use**
+> Seluruh perubahan tetap berada di bawah GPL-3.0. Jika Anda mendistribusikan ulang ArteX-Hub, sertakan berkas `LICENSE` dan atribusi pembuat awal di atas.
 
-1. Install and open Snapgent. It opens `claude.ai` inside the app and keeps your login in its own profile.
-2. Click the workspace button in the toolbar and choose your project folder.
-3. Chat as usual. The agent bar appears on the page and runs the commands in the selected folder.
+**Catatan kompatibilitas:** identifier internal, nama paket, dan beberapa string UI masih memakai `snapgent-*` / `ArteX-TNT` agar kompatibel dengan rilis upstream dan konfigurasi yang sudah ada. Branding repositori dan dokumentasi adalah **ArteX-Hub**.
 
-**Known limitations (0.1.0)**
+---
 
-- The exe is **not code-signed**, so Windows SmartScreen may warn. Click **More info**, then **Run anyway**.
-- **Google sign-in has not been fully tested.** If it fails, log in with email and password on the Claude page.
-- Windows only. The default Electron icon is still used.
+## `02` &nbsp; Yang sudah di-upgrade
 
-**Build from source**
+Ringkasan dari [CHANGELOG.md](CHANGELOG.md) (V3.9.5 → **V3.11.0**):
 
-The source is in [`snapgent-app/`](snapgent-app). It carries its own copy of the extension code (`snapgent-app/extension`), separate from `snapgent-extension/`.
+### Privasi & keamanan
+- **LOCAL-ONLY mode** — saat aktif, halaman provider hanya menerima token amplop berukuran konstan (512 karakter). Metadata (tool, status, ukuran, digest) dienkripsi AES-GCM-256 dengan kunci yang tidak pernah keluar dari browser; payload asli lewat WebSocket ke bridge, bukan lewat chat.
+- **Opaque Envelope Protocol (OEP) v1** — kunci sesi X25519 + HKDF + AES-256-GCM. Perintah dan hasil menjadi `[ENV:v1:...]` / `[RES:v1:...]`; provider tidak bisa membaca isinya.
+- **WS token auth** — `Authorization: Bearer`, `?token=`, atau subprotocol; soket tanpa token ditutup dengan kode `4001`.
+- **Loopback only** — WebSocket `127.0.0.1:17613`, health HTTP `127.0.0.1:17614`. `/auth-token` hanya untuk origin ekstensi, tanpa CORS, dan dibatasi laju.
+- **Sandbox Windows Job Objects** — flag `BREAKAWAY_OK` dihapus sehingga child process tidak bisa keluar dari job. URI workspace dinormalisasi; skema non-`file` ditolak.
+- **Untrusted peer findings** — hasil agen lain dibatasi 600 karakter, dibersihkan dari karakter kontrol, dan dibungkus penanda `<<<PEER_FINDINGS_UNTRUSTED>>>` sebelum masuk prompt.
+
+### Multi-IDE & koordinasi
+- **Deteksi workspace per-IDE** — VS Code, Cursor, dan Zed. Urutan: override `SNAPGENT_WORKSPACE_ROOT` / `SNAPGENT_WORKSPACE`, lalu folder IDE yang benar-benar berjalan, lalu root repositori.
+- **Zed sebagai warga pertama** — `zed_a2a_mcp.py` (stdio MCP, 10 tools: health, agents, inbox, send, coord, mesh), pendaftaran idempoten lima server (`snapgent-git`, `snapgent-shell`, `snapgent-shell-sandboxed`, `snapgent-workspace`, `snapgent-a2a`).
+- **Coordination hub** — registry provider dengan prioritas, kuota request/token, concurrent limit, health `healthy/degraded/down`, failover otomatis, dan **4 strategi memori** (`sliding`, `append-stable`, `hierarchical`, `rolling-summary`) dengan hard budget.
+- **Project mesh** — proyek berupa DAG tugas yang dipersistenkan sebagai JSON; tiap agen punya inbox; temuan satu agen memengaruhi tugas agen berikutnya lewat bus A2A.
+- **Shared memory** — memori jangka pendek/panjang bersama di `state/shared_memory.json`, diperlakukan sebagai konten tidak tepercaya saat dimasukkan ke prompt.
+
+### Bridge & operasional
+- **Hot reload konfigurasi** — perubahan `config.json` memicu restart server MCP tanpa mematikan bridge.
+- **Startup paralel** — semua MCP server dinyalakan bersamaan dengan `asyncio.gather`; kegagalan satu server tidak menunda yang lain.
+- **Provider manager** — pemilihan provider berdasarkan kuota, health, latensi, dan prioritas; habis kuota → pindah otomatis.
+- **Workspace MCP selalu mengiklankan 28 tools** meski VS Code tidak berjalan; bridge melaporkan ±103 tools dari 4 server aktif.
+
+---
+
+## `03` &nbsp; Cara kerja
 
 ```
+┌─────────────┐  perintah JSON  ┌──────────────────┐   WebSocket   ┌────────────┐   MCP   ┌──────────────────┐
+│  AI chat    │ ──────────────▶ │ ArteX-Hub        │ ────────────▶ │  Bridge    │ ──────▶ │ VS Code/Cursor/  │
+│  (browser)  │ ◀────────────── │ (ekstensi MV3)   │ ◀──────────── │ (lokal)    │ ◀────── │ Zed / MCP lain   │
+└─────────────┘     hasil       └──────────────────┘               └─────┬──────┘         └──────────────────┘
+                                                                         │
+                                                        ┌────────────────┴────────────────┐
+                                                        │ coordination hub · mesh · A2A    │
+                                                        │ quota · failover · shared memory │
+                                                        └─────────────────────────────────┘
+```
+
+1. Anda mengetik permintaan dalam bahasa natural di chat AI yang didukung.
+2. AI membalas dengan perintah JSON ArteX-Hub (atau amplop OEP bila privasi aktif).
+3. Ekstensi mendeteksi perintah dan mengirimkannya lewat WebSocket ke bridge lokal.
+4. Bridge merutekan ke MCP server yang dipilih; coordination hub memilih provider dan mengelola kuota.
+5. Hasil dikembalikan ke chat dan AI melanjutkan pekerjaan.
+
+---
+
+## `04` &nbsp; Provider yang didukung
+
+| Provider | URL | Status |
+|---|---|---|
+| DeepSeek | `chat.deepseek.com` | ✅ |
+| ChatGPT | `chatgpt.com` | ✅ |
+| Claude | `claude.ai` | ✅ |
+| Google Gemini | `gemini.google.com` | ✅ |
+| Kimi | `kimi.ai` | ✅ |
+| Grok | `grok.com` | ✅ |
+| GLM (Z.ai) | `chat.z.ai` | ✅ |
+| Qwen | `chat.qwen.ai` | ✅ |
+| Arena | `arena.ai` | ✅ (mode **Direct**) |
+| Meta AI | `meta.ai` | ✅ |
+| Ptero | `ptero.pro` | ✅ |
+| Mistral (Vibe Code) | `chat.mistral.ai` | 🧪 eksperimental |
+
+Aktivasi provider diatur di `snapgent-extension/manifest.json` (`content_scripts`, `host_permissions`) dan `PROVIDER_URLS` di `background.js`.
+
+---
+
+## `05` &nbsp; Persyaratan & instalasi
+
+- **Browser** Chromium (Chrome/Edge), Manifest V3.
+- **Bridge** — Windows: `start.bat` (bundled `bridge.exe`). macOS: `MacOS_Start.command`. Linux: `bash Linux_Start.sh` (butuh Python 3.9+, modul `websockets`).
+- **IDE** — VS Code (default), Cursor, atau Zed. Buka folder proyek yang ingin dipakai sebelum menekan **Start**.
+
+```bash
+# 1. Muat ekstensi
+# edge://extensions atau chrome://extensions → Developer mode → Load unpacked
+# pilih folder snapgent-extension/
+
+# 2. Jalankan bridge
+# Windows: klik dua kali start.bat
+# macOS:   klik dua kali MacOS_Start.command
+# Linux:   bash Linux_Start.sh
+
+# 3. Cek kesehatan
+curl http://127.0.0.1:17614/health
+```
+
+`config.json` dibuat lokal oleh launcher dan **tidak** disimpan di Git — di dalamnya ada secret bridge dan path mesin Anda.
+
+Alternatif tanpa browser: **Snapgent App** (Electron, Windows) di `snapgent-app/` dengan browser AI, toolbar, dan bridge bawaan.
+
+```bash
 cd snapgent-app
 npm install
-npm start        # run in development
-npm run dist     # build the Windows installer into dist/
-```
-
-`snapgent-app/bin/vscode_mcp.exe` is not stored in Git. Build it from `snapgent-app/mcp/vscode_mcp.py` with PyInstaller (see `vscode_mcp.spec`) and place it in `snapgent-app/bin/` before running `npm run dist`.
-
----
-
-## `02` &nbsp; Supported AI providers
-
-| Provider | URL | Status | Notes |
-|---|---|---|---|
-| **ChatGPT** | `chatgpt.com` | ✅ Supported | Image input and screenshots are disabled |
-| **Claude** | `claude.ai` | ✅ Supported | Image input and screenshots are disabled |
-| **Google Gemini** | `gemini.google.com` | ✅ Supported | May stop using tools in long sessions |
-| **Kimi** | `kimi.ai` | ✅ Supported | May use its native tools in some sessions |
-| **Grok** | `grok.com` | ✅ Supported | Requires signing in to xAI |
-| **Mistral (Vibe Code)** | `chat.mistral.ai` | 🧪 Experimental | Requires signing in to Mistral; selectors need testing on the live site |
-| **GLM (Z.ai)** | `chat.z.ai` | ✅ Supported | |
-| **Qwen** | `chat.qwen.ai` | ✅ Supported | |
-| **Arena** | `arena.ai` | ✅ Supported | Use **Direct** mode |
-| **Meta AI** | `meta.ai` | ✅ Supported | |
-| **Ptero** | `ptero.pro` | ✅ Supported | |
-
-> Provider activation is configured in `manifest.json` (`content_scripts` and `host_permissions`) and `PROVIDER_URLS` in `background.js`.
-
----
-
-## `03` &nbsp; Requirements
-
-- **Microsoft Edge** or **Google Chrome** (Manifest V3).
-- **VS Code** for the default target. Keep the workspace you want to use open in VS Code.
-- **Windows**, **macOS**, or **Linux** for the bridge.
-- **Python 3.9+** on macOS and Linux. Windows includes the bridge executable.
-- The bridge running while you use the agent.
-
----
-
-## `04` &nbsp; Installation
-
-**① Load the extension**
-
-1. Download and extract the [latest SnapgentV3 release](https://github.com/herdodp/snapgent-connector/releases/tag/V3.9.4).
-2. Open `edge://extensions` (Edge) or `chrome://extensions` (Chrome).
-3. Enable **Developer mode**.
-4. Click **Load unpacked** and select the `snapgent-extension` folder.
-5. The ArteX-TNT icon appears in your browser toolbar.
-
-**② Set up the MCP target**
-
-For VS Code, open the project folder you want to work on before clicking **Start** in the chat bar. The bridge can be started before VS Code; the agent waits until a workspace is available and does not fall back to the Snapgent release folder.
-
-**③ Start the bridge**
-
-- **Windows** — double-click `start.bat`. It configures VS Code MCP automatically.
-  You can start the bridge before VS Code.
-  Machine-specific settings are written to the ignored local `config.json`.
-- **macOS** — double-click `MacOS_Start.command`. It detects the bundled
-  VS Code MCP server, Roblox Studio's MCP executable, and an installed
-  EffectCraft CLI, then writes their machine-specific paths to the ignored
-  local `config.json`. This launcher uses `bridge.py`; it does not run the
-  Windows-only `bridge.exe`.
-- **Linux** — open a terminal in the extracted release folder and run
-  `bash Linux_Start.sh`. It detects the bundled VS Code MCP server and
-  installed EffectCraft CLI, then writes
-  machine-specific paths to the ignored local `config.json`. It uses
-  `bridge.py`; the first launch installs `websockets` for your user, or creates
-  a local Python environment if your distribution blocks user installs.
-
-Keep the terminal window open while the bridge runs. On macOS, the first
-launch may show a Gatekeeper warning; select **Done**, then allow the script
-under **System Settings → Privacy & Security**.
-
-**Optional: connect EffectCraft**
-
-On Windows, `start.bat` detects EffectCraft in common install locations and
-starts its control channel automatically. On macOS, install the separate
-EffectCraft CLI release and put `effectcraft-cli` on your `PATH`; the launcher
-detects it and starts the app's control channel when EffectCraft is installed
-in `/Applications` or `~/Applications`. On Linux, install the EffectCraft CLI
-and put `effectcraft-cli` on your `PATH`; the launcher detects it and starts
-EffectCraft when its executable is available on `PATH` or in a common
-installation location. On any system, save your work and close EffectCraft
-before restarting the launcher if EffectCraft is already open without the
-control channel. When the bridge connects, choose
-**EffectCraft** in the MCP target selector on the chat bar.
-
-On macOS, Roblox Studio MCP is detected at
-`/Applications/RobloxStudio.app/Contents/MacOS/StudioMCP`; set
-`ZS_STUDIO_MCP_PATH` before launching if it is installed elsewhere.
-Linux does not auto-detect Roblox Studio MCP. If you have a compatible Linux
-MCP executable, set `ZS_STUDIO_MCP_PATH` to its path before running the
-launcher; Roblox Studio itself may not be available on your Linux distribution.
-
-**④ Start a session**
-
-1. Open a supported AI chat site and start a new chat.
-2. Open a project folder in VS Code before clicking **Start**.
-3. Click **Start** and describe what you want to make.
-
-**⑤ Updating to a new release**
-
-The extension and the bridge are two separate parts, and each one has to be updated. Reloading only the extension does not update the bridge, and the **Restart** button in the extension popup only restarts the MCP servers, it does not load new bridge code.
-
-1. Get the new version: run `git pull` in the project folder, or download and extract the [latest release](https://github.com/herdodp/snapgent-connector/releases/latest).
-2. Stop the old bridge: close the terminal window that is running `start.bat`, `MacOS_Start.command` or `Linux_Start.sh`.
-3. Start the bridge again with the same launcher. The launcher replaces an old bridge still holding port 17613. On Linux it first checks that the process on the port is a Snapgent bridge, and stops with an error if it belongs to another program.
-4. Reload the extension at `chrome://extensions` (or `edge://extensions`), then refresh open chat tabs (F5).
-5. Check the versions: click the ArteX-TNT icon. The popup header shows `ext vX · bridge vY`, and both numbers should match the release you installed. The bridge also writes `snapgent bridge vY` to its startup log.
-
-If the popup shows `bridge old`, the bridge is still running old code: repeat steps 2 and 3. On macOS and Linux, also make sure there is no old executable file named `bridge` in the folder, because the launcher runs it instead of `bridge.py`.
-
-> **Windows note (V3.9.4):** `start.bat` runs the bundled `bridge.exe`, which was rebuilt for V3.9.4 and includes the large-response fix, the version display and parallel server startup. If the popup still shows `bridge old`, close `start.bat` and start it again so the new `bridge.exe` is used. To run the bridge from source instead, install Python 3.9+ and `py -3 -m pip install websockets`, then run `py -3 bridge.py` in the project folder.
-
----
-
-## `05` &nbsp; Usage
-
-Once a session is running, just talk to the AI normally:
-
-> "Inspect the files in my project and explain how the login flow works."
-
-> "Add a search bar to the books page and wire it to the existing API."
-
-The AI sends commands, ArteX-TNT runs them in the selected target (VS Code by default), and the results appear in chat. You can give the AI another instruction at any time.
-
-**Tips**
-
-- Keep the bridge window open — closing it disconnects the agent.
-- Keep your intended project open in VS Code; it is the default MCP target.
-- On **Arena**, use **Direct** mode.
-- If **Gemini** or **Kimi** stops using tools in a long session, remind it to use the ArteX-TNT commands or start a new chat.
-
----
-
-## `06` &nbsp; Architecture
-
-The extension is split into a **provider-agnostic core** and **per-site providers**. The core talks to each AI site through the `ZSProvider` interface.
-
-```
-core/config.js              system prompt, feedback, tool categories
-core/parser.js              ArteX-TNT command parsing
-core/main.js                agent loop, UI, session state
-providers/<site>.js         site-specific selectors and chat integration
-background.js               WebSocket connection to the local bridge
-manifest.json               browser permissions and content scripts
-```
-
-The bridge routes commands to the configured MCP servers. Windows uses the
-bundled `bridge.exe`; macOS and Linux run the cross-platform `bridge.py` with
-Python.
-
----
-
-## `07` &nbsp; Project structure
-
-```
-snapgent-full/
-├── snapgent-extension/        # Load this folder as an unpacked extension
-│   ├── core/                  # Shared prompt, parser, agent loop, and UI
-│   ├── providers/             # Per-AI-site integrations
-│   ├── background.js          # Local bridge connection
-│   ├── manifest.json          # Manifest V3 configuration
-│   └── test-*.js              # Smoke tests
-├── assets/                    # Project images
-├── setup-config.ps1           # Configures Windows MCP servers
-├── setup-config.py            # Detects MCP servers on macOS and Linux
-├── config.json                # Generated locally by launchers (not tracked)
-├── start.bat                  # Windows bridge launcher
-├── MacOS_Start.command        # macOS bridge launcher
-├── Linux_Start.sh             # Linux bridge launcher
-├── bridge.exe                 # Windows local bridge
-├── bridge.py                  # Cross-platform Python MCP bridge
-├── vscode_mcp.exe             # Default VS Code MCP server (28 workspace tools)
-├── vscode_mcp.py              # VS Code MCP server source
-├── test_bridge.py             # MCP bridge protocol tests
-├── test_setup_config.py       # MCP setup helper tests
-└── vscode_mcp.spec            # PyInstaller build recipe
+npm start        # pengembangan
+npm run dist     # build installer Windows ke dist/
 ```
 
 ---
 
-## `08` &nbsp; Troubleshooting
+## `06` &nbsp; Struktur proyek
 
-| Symptom | Likely cause | Fix |
+```
+ArteX-Hub/
+├── snapgent-extension/        # ekstensi browser MV3 (muat sebagai unpacked)
+│   ├── core/                  # prompt, parser, agent loop, UI, privacy.js
+│   ├── providers/             # integrasi per situs AI
+│   ├── background.js          # koneksi WebSocket ke bridge
+│   └── manifest.json          # izin & content scripts
+├── snapgent-app/              # aplikasi desktop Electron (opsional)
+├── bridge.py                  # bridge WebSocket + HTTP health + MCP router
+├── bridge.exe                 # bridge Windows (bundled)
+├── coordination_hub.py        # provider registry, kuota, failover, memori, A2A
+├── mesh.py                    # DAG tugas antar-agen + inbox
+├── oep.py                     # Opaque Envelope Protocol v1 (X25519 + AES-GCM)
+├── zed_a2a_mcp.py             # stdio MCP untuk Zed
+├── vscode_mcp.py              # 28 workspace tools
+├── git_mcp.py / shell_mcp.py  # Git tools / shell tools (Windows Job Object)
+├── autochat/auto_chat.py      # orkestrator auto-chat
+├── scripts/                   # register MCP, health check, pack extension, tests
+├── docs/USAGE.md              # panduan operasional + bukti verifikasi
+├── CHANGELOG.md               # riwayat rilis lengkap
+└── LICENSE                    # GNU GPL v3.0
+```
+
+---
+
+## `07` &nbsp; Verifikasi
+
+Bukti historis tersimpan di [docs/USAGE.md](docs/USAGE.md) dan [CHANGELOG.md](CHANGELOG.md): health `200` dengan 4/4 server aktif, autentikasi WS ditolak tanpa token (`4001`), origin asing ditolak (`403`), uji `test_coordination.py` 82 checks, `test_mesh.py` 26 checks, `test_bridge.py` 4 tests, serta uji E2E dan Zed MCP stdio lulus.
+
+Untuk memeriksa ulang di mesin Anda:
+
+```bash
+python -m pytest -q
+python scripts/check_bridge_health.py
+```
+
+---
+
+## `08` &nbsp; Masalah umum
+
+| Gejala | Penyebab | Perbaikan |
 |---|---|---|
-| ArteX-TNT bar is missing | Extension is disabled or site access is blocked | Check the extension is enabled and allowed on the current AI chat site, then reload the tab |
-| Bridge is offline | Bridge is not running | Start `start.bat` (Windows), `MacOS_Start.command` (macOS), or run `bash Linux_Start.sh` (Linux) |
-| AI replies without using tools | Provider/model stopped following commands | Remind it to use ArteX-TNT commands or start a new chat |
-| VS Code target is unavailable | The bridge is offline or the release is incomplete | Run `start.bat` from the extracted release folder and keep the project open in VS Code |
-| A configured MCP server is missing from the target dropdown | The server was switched off in the **MCP servers** panel, or the extension is outdated | Open **MCP servers** from the ⋯ menu on the snapgent bar and tick the server, then reload the extension in `chrome://extensions` and refresh the chat tab |
-| Target dropdown closes or the click does nothing | Older extension versions redrew the menu during status updates | Update to the latest release and reload the extension |
+| Bar ArteX-Hub tidak muncul | Ekstensi nonaktif / akses situs diblokir | Aktifkan ekstensi, izinkan di situs chat, muat ulang tab |
+| Bridge offline | Launcher belum jalan | Jalankan `start.bat` / `MacOS_Start.command` / `bash Linux_Start.sh` |
+| AI menjawab tanpa tools | Model berhenti mengikuti format perintah | Ingatkan format perintah ArteX-Hub atau mulai chat baru |
+| Target workspace salah | IDE lain aktif / env override mengarah ke folder lama | Set `SNAPGENT_WORKSPACE_ROOT` lalu restart bridge |
+| `bridge old` di popup | Bridge lama masih memegang port 17613 | Tutup launcher, jalankan ulang, lalu reload ekstensi & refresh tab |
 
 ---
 
 <div align="center">
 
-**Built for creators who want to spend more time making.**
+**Dibangun di atas karya [herdodp / Snapgent Connector](https://github.com/herdodp/snapgent-connector) — GPL-3.0.**
 
-[Latest release V3.9.4](https://github.com/herdodp/snapgent-connector/releases/tag/V3.9.4) · [Issues](https://github.com/herdodp/snapgent-connector/issues) · [License](LICENSE)
+[Repo ArteX-Hub](https://github.com/goresnog-netizen/ArteX-Hub) · [Changelog](CHANGELOG.md) · [Lisensi](LICENSE)
 
 </div>

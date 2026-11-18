@@ -1,0 +1,30 @@
+{
+  "_comment": "Merge this into Zed's settings.json agent.context_servers (and the same block inside each agent.profiles.<name> if that profile defines its own context_servers map — an empty {} in a profile shadows the top-level map). Verified 2026-11-11: git_mcp.py answers initialize + tools/list (37 tools) over stdio, shell_mcp.py answers 10 tools, and the sandboxed shell answers shell_run with exit_code 0 through sandbox_job.py with pure JSON-RPC on stdout.",
+  "context_servers": {
+    "snapgent-git": {
+      "command": "python",
+      "args": [
+        "C:/MRP/proyek 2026/snapgent-connector/git_mcp.py"
+      ],
+      "env": {
+        "SNAPGENT_WORKSPACE": "C:/MRP/proyek 2026/snapgent-connector"
+      }
+    },
+    "snapgent-shell": {
+      "command": "python",
+      "args": [
+        "C:/MRP/proyek 2026/snapgent-connector/scripts/../shell_mcp.py"
+      ],
+      "env": {
+        "SNAPGENT_WORKSPACE": "C:/MRP/proyek 2026/snapgent-connector"
+      }
+    },
+    "snapgent-shell-sandboxed": {
+      "command": "python",
+      "args": [
+        "C:/MRP/proyek 2026/snapgent-connector/sandbox_job.py",
+        "C:/MRP/proyek 2026/snapgent-connector/scripts/shell-mcp-job.json"
+      ]
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "memoryLimitMB": 512,
+  "maxProcesses": 20,
+  "exe": "python",
+  "args": ["shell_mcp.py"],
+  "cwd": "C:\\MRP\\proyek 2026\\snapgent-connector"
+}

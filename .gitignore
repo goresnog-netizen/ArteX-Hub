@@ -36,3 +36,5 @@ _cleanup_archive_20261111/
 Thumbs.db
 desktop.ini
 __pycache__/
+.pytest_cache/
+.ruff_cache/
