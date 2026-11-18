@@ -1,0 +1,15 @@
+PASS mesh_connected connected
+PASS mesh_project_created
+PASS project_id_present prj_99e10e1b
+PASS project_tasks_2 null
+PASS mesh_run_started mesh_run_started
+PASS mesh_task_resolved {"type": "mesh_task_result", "id": "p2", "resolved": true}
+PASS mesh_task_resolved {"type": "mesh_task_result", "id": "p2", "resolved": true}
+PASS mesh_answered_two 2
+PASS mesh_run_finished {"type": "mesh_run_finished", "id": "m2", "projectId": "prj_99e10e1b", "summary": {"ok": true, "project": "prj_99e10e1b", "status": "done", "progress": {"pending": 0, "ready": 0, "running": 0, "done":
+PASS mesh_all_done {"pending": 0, "ready": 0, "running": 0, "done": 2, "failed": 0, "cancelled": 0}
+PASS handoff_reached_peer ['Findings from your peer agents, use them and do not repeat their work:\n- provider:chatgpt (note): {"note": "use async io', 'Findings from your peer agents, use them and do not repeat their work:\n- provider:chatgpt (peer.result): {"from_task": "']
+PASS mesh_agent_message_delivered ['provider:deepseek']
+PASS mesh_unknown_project_refused {"type": "mesh_error", "id": "m5", "error": "unknown project"}
+
+OVERALL: PASS

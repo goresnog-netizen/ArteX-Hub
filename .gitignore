@@ -1,0 +1,38 @@
+﻿# Local-only folders
+Compressed/
+Deprecated/
+ExtensionPresentation/
+presentation/
+config.json
+
+# Build output and local backups
+routergent/
+dist_tmp/
+build_tmp/
+dist_v394/
+build_v394/
+bridge.exe.bak
+vscode_mcp.exe.old
+config.json.bak-*
+
+# Zip files
+*.zip
+
+# Local dev / diagnostic tools
+probe.py
+logs/
+devtools/
+
+# Runtime state and local logs (regenerated on demand)
+state/
+*.log
+*.out
+
+# One-off probe archive from the 2026-11-11 cleanup (kept on disk as the undo)
+_cleanup_archive_20261111/
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+__pycache__/

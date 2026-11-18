@@ -1,0 +1,205 @@
+{
+    "mcpServers":  {
+                       "vscode":  {
+                                      "command":  "python",
+                                      "args":  [
+                                                   "vscode_mcp.py"
+                                               ],
+                                      "env":  {
+
+                                              }
+                                  },
+                       "git":  {
+                                   "command":  "python",
+                                   "args":  [
+                                                "git_mcp.py"
+                                            ],
+                                   "env":  {
+                                               "SNAPGENT_WORKSPACE":  "${workspace}"
+                                           },
+                                   "sandbox":  "none"
+                               },
+                       "shell":  {
+                                     "command":  "python",
+                                     "args":  [
+                                                  "shell_mcp.py"
+                                              ],
+                                     "env":  {
+                                                 "SNAPGENT_WORKSPACE":  "${workspace}"
+                                             },
+                                     "sandbox":  "windows-job"
+                                 },
+                       "zed":  {
+                                   "command":  "python",
+                                   "args":  [
+                                                "vscode_mcp.py"
+                                            ],
+                                   "env":  {
+                                               "SNAPGENT_WORKSPACE":  "${workspace}"
+                                           },
+                                   "sandbox":  "none"
+                               }
+                   },
+    "bridge":  {
+                   "auth":  {
+                                "enabled":  true,
+                                "secret":  "4f8614f5714e6343e6a8222b0dfb6b76816c7150dd4c419786ea8af999817e87",
+                                "algorithm":  "HS256"
+                            },
+                   "health":  {
+                                  "enabled":  true,
+                                  "host":  "127.0.0.1",
+                                  "port":  17614
+                              },
+                   "hotReload":  {
+                                     "enabled":  true,
+                                     "debounceMs":  500
+                                 },
+                   "tracing":  {
+                                   "enabled":  true,
+                                   "format":  "json",
+                                   "level":  "INFO"
+                               },
+                   "sandbox":  {
+                                   "default":  "none",
+                                   "profiles":  {
+                                                    "firejail":  {
+                                                                     "enabled":  true,
+                                                                     "profile":  "mcp-restrictive.profile",
+                                                                     "whitelistPaths":  [
+                                                                                            "${workspace}",
+                                                                                            "${temp}"
+                                                                                        ]
+                                                                 },
+                                                    "docker":  {
+                                                                   "enabled":  false,
+                                                                   "image":  "python:3.11-slim",
+                                                                   "memoryLimit":  "512m",
+                                                                   "cpuLimit":  "0.5",
+                                                                   "networkMode":  "none",
+                                                                   "readOnlyRootfs":  true
+                                                               },
+                                                    "windows-job":  {
+                                                                        "enabled":  true,
+                                                                        "memoryLimitMB":  512,
+                                                                        "cpuLimitPercent":  50,
+                                                                        "maxProcesses":  50,
+                                                                        "restrictNetwork":  true,
+                                                                        "restrictFilesystem":  true,
+                                                                        "allowedPaths":  [
+                                                                                             "${workspace}",
+                                                                                             "${temp}"
+                                                                                         ],
+                                                                        "deniedPaths":  [
+                                                                                            "C:\\Windows",
+                                                                                            "C:\\Program Files",
+                                                                                            "C:\\Program Files (x86)",
+                                                                                            "C:\\Users\\*\\AppData\\Local\\Microsoft\\Windows",
+                                                                                            "C:\\Users\\*\\AppData\\Roaming\\Microsoft\\Windows"
+                                                                                        ]
+                                                                    }
+                                                }
+                               },
+                   "security":  {
+                                    "maxMessageSize":  52428800,
+                                    "pingInterval":  20,
+                                    "pingTimeout":  20,
+                                    "rateLimit":  {
+                                                      "enabled":  true,
+                                                      "requestsPerMinute":  300,
+                                                      "burst":  50
+                                                  },
+                                    "allowedOrigins":  [
+                                                           "https://chat.deepseek.com",
+                                                           "https://chatgpt.com",
+                                                           "https://claude.ai",
+                                                           "https://gemini.google.com",
+                                                           "https://grok.com",
+                                                           "https://www.kimi.ai",
+                                                           "https://kimi.ai",
+                                                           "https://chat.z.ai",
+                                                           "https://chat.qwen.ai",
+                                                           "https://arena.ai",
+                                                           "https://www.meta.ai",
+                                                           "https://ptero.pro"
+                                                       ],
+                                    "extensionId":  "hpeolgkpbdcicahifcgainojfilbgmnb"
+                                }
+               },
+    "providers":  {
+                      "chatgpt":  {
+                                      "endpoint":  "https://chatgpt.com/backend-api/conversation",
+                                      "models":  [
+                                                     "gpt-5",
+                                                     "gpt-5-mini"
+                                                 ],
+                                      "auth":  "bearer",
+                                      "requestsPerMinute":  60,
+                                      "tokensPerMinute":  150000,
+                                      "maxConcurrent":  3,
+                                      "priority":  1,
+                                      "memoryStrategy":  "sliding",
+                                      "memoryWindowTokens":  40000
+                                  },
+                      "deepseek":  {
+                                       "endpoint":  "https://api.deepseek.com/v1/chat/completions",
+                                       "models":  [
+                                                      "deepseek-chat",
+                                                      "deepseek-reasoner"
+                                                  ],
+                                       "auth":  "bearer",
+                                       "requestsPerMinute":  60,
+                                       "tokensPerMinute":  120000,
+                                       "maxConcurrent":  4,
+                                       "priority":  2,
+                                       "memoryStrategy":  "append-stable",
+                                       "memoryWindowTokens":  32000
+                                   },
+                      "gemini":  {
+                                     "endpoint":  "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent",
+                                     "models":  [
+                                                    "gemini-2.0-flash",
+                                                    "gemini-2.0-pro"
+                                                ],
+                                     "auth":  "header",
+                                     "headers":  {
+                                                     "x-goog-api-key":  ""
+                                                 },
+                                     "requestsPerMinute":  60,
+                                     "tokensPerMinute":  200000,
+                                     "maxConcurrent":  5,
+                                     "priority":  3,
+                                     "memoryStrategy":  "hierarchical",
+                                     "memoryWindowTokens":  60000
+                                 },
+                      "qwen":  {
+                                   "endpoint":  "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
+                                   "models":  [
+                                                  "qwen-max",
+                                                  "qwen-plus"
+                                              ],
+                                   "auth":  "bearer",
+                                   "requestsPerMinute":  40,
+                                   "tokensPerMinute":  100000,
+                                   "maxConcurrent":  2,
+                                   "priority":  4,
+                                   "memoryStrategy":  "rolling-summary",
+                                   "memoryWindowTokens":  24000
+                               },
+                      "openai":  {
+                                     "endpoint":  "https://api.openai.com/v1/chat/completions",
+                                     "models":  [
+                                                    "gpt-4o",
+                                                    "gpt-4o-mini",
+                                                    "gpt-4-turbo"
+                                                ],
+                                     "auth":  "bearer",
+                                     "requestsPerMinute":  60,
+                                     "tokensPerMinute":  150000,
+                                     "maxConcurrent":  5,
+                                     "priority":  1,
+                                     "memoryStrategy":  "sliding",
+                                     "memoryWindowTokens":  128000
+                                 }
+                  }
+}
