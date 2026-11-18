@@ -38,3 +38,4 @@ desktop.ini
 __pycache__/
 .pytest_cache/
 .ruff_cache/
+.workbuddy-ai/
